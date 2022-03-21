@@ -1,0 +1,47 @@
+basePath: /
+host: localhost:8000
+info:
+  contact: {}
+  description: API Server
+  title: l0 API
+  version: "1.0"
+paths:
+  /api/orders:
+    get:
+      consumes:
+      - application/json
+      description: Get all orders
+      operationId: get-all-orders
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: GetAllOrders
+      tags:
+      - orders
+  /api/orders/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get order by id
+      operationId: get-order-by-id
+      parameters:
+      - description: id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: GetOrderById
+      tags:
+      - orders
+swagger: "2.0"
